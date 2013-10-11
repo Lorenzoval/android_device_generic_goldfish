@@ -23,7 +23,15 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SHARED_LIBRARIES := libcutils liblog
 
+ifdef PRODUCT_LG_P970
+LOCAL_SHARED_LIBRARIES += libpower
+endif
+
+ifdef PRODUCT_LG_P970
+LOCAL_SRC_FILES := audio_hw_unsupported.c
+else
 LOCAL_SRC_FILES := audio_hw.c
+endif
 
 LOCAL_SHARED_LIBRARIES += libdl
 
